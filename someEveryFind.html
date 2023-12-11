@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function hasOddNumbers(params) {
+            return params.some(function (val) {
+                return val % 2 !== 0;
+            })
+        }
+        console.log(hasOddNumbers([1,2,2,2,2,2,4]));
+        console.log(hasOddNumbers([2,4,6,8,]));
+
+
+        function hasZero(params) {
+            return params.toString().split('').some(function(val){
+                return val === '0';
+            })
+        }
+        console.log(hasZero([1234560789]));
+
+
+        function onlyOddNumbers(params) {
+            return params.every(function(val){
+                return val % 2 !== 0;
+            })
+        }
+        console.log(onlyOddNumbers([1,,3,7,1,5,9,0]));
+
+
+        /*function noDuplicates(params) {
+            return params.every(function(val){
+                return params.indexOf(val) === params.lastIndexOf(val);
+            });
+        }
+        console.log(noDuplicates(1,5,7,8,9,2,5,0));*/
+
+
+        let params = [
+            {title: "Instructor", first: 'Elie', last:"Schoppik"},
+            {title: "Instructor", first: 'Tim', last:"Garcia", isCatOwner: true},
+            {title: "Instructor", first: 'Matt', last:"Lane"},
+            {title: "Instructor", first: 'Colt', last:"Steele", isCatOwner: true}
+        ]
+
+        function hasCertainKey(params, key) {
+            return params.every(function(val){
+                return key in val
+            })
+        }
+        console.log(hasCertainKey());
+
+        function hasCertainVal(arr, key, searchValue) {
+            return arr.every(function(val){
+                return val[key] === searchValue;
+            })
+        }
+        console.log(hasCertainVal([]));
+
+    </script>
+</body>
+</html>
